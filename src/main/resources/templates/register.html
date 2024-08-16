@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<section>
+	
+	<div class="container p-5">
+    <div class="row">
+        <div class="col-md-6 ">
+            <img alt="" src="img/empresa.png" width="100%" height="400px">
+        </div>
+        <div class="col-md-6  ">
+            <div class="card shadow p-3 mb-5 bg-body-tertiary rounded ">
+                <div class="card-header bg-warning">
+                    <p class="fs-4 text-center">Registrarse</p>
+                </div>
+                <div class="card-body">
+                    <form>
+                    
+                    	
+                    		<div class="col">
+                    		<div class="mb-2">
+                    			<label class="form-label">Nombres</label>
+                    			<input class="form-control" name="name" type="text">
+                    			</div>
+                    		     <div class="mb-2"> 		
+                    			<label class="form-label">Celular</label>
+                    			<input class="form-control" name="celular" type="number"></div>            
+                    		<div class="mb-2">
+                            <label class="form-label">Email</label>
+                            <input class="form-control" name="email" type="email" ></div>
+              				<div class="mb-2">
+                            <label class="form-label">Direccion</label>
+                            <input class="form-control" name="direccion" type="text" ></div>
+                        	<div class="mb-2">
+                        		<label class="form-label">Ciudad</label>
+                            	<input class="form-control" name="ciudad" type="text" >
+                        	</div>                      
+                                       
+                        <div class="row ">
+                        	<div class="col mb-2">
+                            <label class="form-label">Password</label>
+                            <input class="form-control" name="password" type="text" >
+                        	</div>
+                        	<div class="col mb-2">
+                        		<label class="form-label">Confirmar Password</label>
+                            	<input class="form-control" name="cpassword" type="password" >
+                        	</div>                      
+                        </div>
+                        
+                        <div class="col">
+                        	<label class="form-label">Imagen de Perfil</label>
+                        	<input class="form-control" name="imagen_perfil" type="file">
+                        </div><br>                   
+                        
+                        <button type="submit" class="btn bg-warning text-white col-md-12 ">Registrar</button>
+                   
+                    </form>
+                    
+                </div>
+                <div class="card-footer text-center">
+                    Tienes una Cuenta? 
+                    <a href="/login" class="text-decoration-underline bg-light">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	
+</section>
+</body>
+</html>

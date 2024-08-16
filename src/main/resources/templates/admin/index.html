@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+			th:replace="~{base::layout(~{::section})}" >
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+		<div class="container p-2">
+			<p class="text-center fs-3 mt-2">Admin Dashboard</p>
+			<div class="row p-2">
+				<div class="col-md-4" >
+					<a href="/admin/addproducto" class="text-decoration-none" >
+						<div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+							<div class="card-body text-center text-primary">
+								<i class="fa-solid fa-box fa-3x"></i>
+								<h4>Producto</h4>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a href="/admin/categoria" class="text-decoration-none">
+						<div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+							<div class="card-body text-center text-success">
+								<i class="fa-solid fa-tags fa-3x"></i>
+								<h4>Categoria</h4>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a href="#" class="text-decoration-none">
+						<div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+							<div class="card-body text-center text-warning">
+								<i class="fa-solid fa-eye fa-3x"></i>
+								<h4>Proveesores</h4>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a href="#" class="text-decoration-none">
+						<div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+							<div class="card-body text-center text-danger">
+								<i class="fa-solid fa-file-invoice fa-3x"></i>
+								<h4>Pedidos</h4>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a href="#" class="text-decoration-none">
+						<div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+							<div class="card-body text-center text-info">
+								<i class="fa-solid fa-user fa-3x"></i>
+								<h4>Clientes</h4>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a href="#" class="text-decoration-none">
+						<div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+							<div class="card-body text-center text-secondary">
+								<i class="fa-solid fa-user-shield fa-3x"></i>
+								<h4>Usuarios</h4>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

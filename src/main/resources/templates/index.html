@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+
+	<section>
+		<!-- inicio de slider -->
+		<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+			<div class="carousel-indicators">
+				<button type="button" data-bs-target="#carouselExampleIndicators"data-bs-slide-to="0" class="active" aria-current="true"aria-label="Slide 1"></button>
+				<button type="button" data-bs-target="#carouselExampleIndicators"data-bs-slide-to="1" aria-label="Slide 2"></button>
+				<button type="button" data-bs-target="#carouselExampleIndicators"data-bs-slide-to="2" aria-label="Slide 3"></button>
+			</div>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="img/img1.png" class="d-block w-100" alt="..." height="350px">
+					<div class="carousel-caption d-none d-md-block fw-bold">
+                <h5>Repuestos de Autos</h5>
+                <p>Encuentra todo tipo de repuestos para tu vehículo, con la mejor calidad del mercado.</p>
+            </div>
+				</div>
+				<div class="carousel-item">
+					<img src="img/img2.png" class="d-block w-100" alt="..."
+						height="350px">
+						<div class="carousel-caption d-none d-md-block fw-bold">
+                <h5>Pedidos en Línea</h5>
+                <p>Haz tu pedido fácilmente desde nuestra plataforma online. ¡El mejor servicio a tu alcance!</p>
+            </div>
+				</div>
+				<div class="carousel-item">
+					<img src="img/img3.png" class="d-block w-100" alt="..."
+						height="350px">
+						<div class="carousel-caption d-none d-md-block fw-bold">
+                <h5>Revisión y Reemplazo</h5>
+                <p>Confía en los mejores profesionales para la revisión y reemplazo de autopartes.</p>
+            </div>
+				</div>
+			</div>
+			<button class="carousel-control-prev" type="button"data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button"data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+		<!-- fin del slider -->
+
+		<!-- inicio del modulo  categoria -->
+		<div class="container">
+			<div class="row">
+				<p class="text-center fs-3 fw-bold">Categorias</p>
+				<div class="col-md-2">
+					<div
+						class="card rounded-circle shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+						<!-- un reflejo de sombra sacado de bootstrap shadow -->
+						<div class="card-body text-center">
+							<img src="img/sistmotores.png" width="65%" height="140px">
+							<p>Motores y Transmisión</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-2">
+					<div
+						class="card rounded-circle shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+						<div class="card-body text-center">
+							<img src="img/frenos.png" width="65%" height="140px">
+							<p>Sistema de Frenos</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div
+						class="card rounded-circle shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+						<div class="card-body text-center">
+							<img src="img/suspensio.png" width="65%" height="140px">
+							<p>Sistema de Suspensión</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div
+						class="card rounded-circle shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+						<div class="card-body text-center">
+							<img src="img/sistelectrico.png" width="65%" height="140px">
+							<p>Sistema Eléctrico</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div
+						class="card rounded-circle shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+						<div class="card-body text-center">
+							<img src="img/sistemacombustible.png" width="65%" height="140px">
+							<p>Sistema de Combustible</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div
+						class="card rounded-circle shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+						<div class="card-body text-center">
+							<img src="img/accesorios.png" width="65%" height="140px">
+							<p>Accesorios y Otros</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- fin del modulo  categoria -->
+
+		<!--iniciar el modulo del ultimo producto-->
+
+		<div class="container-fluid bg-light p-3">
+			<div class="row">
+				<p class="text-center fs-3 fw-bold">Ultimos Productos</p>
+				<div class="col-md-3">
+					<div class="card shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+						<div class="card-body text-center">
+							<img src="img/producto1.png" alt="" class="" width="65%" height="140px">
+							<p class="text-center">Bomba de agua para sistemas de enfriamiento</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+						<div class="card-body text-center">
+							<img src="img/producto2.png" alt="" class="" width="65%" height="140px">
+							<p class="text-center">Pastillas de freno y discos de freno</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+						<div class="card-body text-center">
+							<img src="img/producto3.png" alt="" class="" width="65%" height="140px">
+							<p class="text-center">Kits de amortiguadores para la suspensión</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+						<div class="card-body text-center">
+							<img src="img/producto4.png" alt="" class="" width="65%" height="140px">
+							<p class="text-center">Correas de distribución para motores</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--fini del modulo del ultimo producto-->
+		
+				
+
+	</section>
+</body>
+</html>
