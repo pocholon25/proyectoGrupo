@@ -1,51 +1,98 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{base::layout(~{::section})}">
 <head>
     <meta charset="UTF-8">
-    <title>Mantenimiento de Productos</title>
+    <title>Administrar Productos</title>
 </head>
 <body>
     <section>
-        <div class="container p-5">
+        <div class="container-fluid p-4 mt-3">
             <div class="row">
-                <div class="col-md-6 offset-md-3">
+                <!-- Formulario para agregar productos -->
+                <div class="col-md-4">
                     <div class="card card-sh">
-                        <div class="card-header text-center fs-4 bg-warning">MANTENIMIENTO DE PRODUCTOS</div>
-                        
+                        <div class="card-header text-center fs-3 card-header-custom">
+                            <p>MANTENIMIENTO DE PRODUCTOS</p>
+                            <!-- Bloque de mensajes de error -->
+                            <th:block th:if="${succMsg}">
+                                <p class="text-success fs-6 fw-bold">[[${succMsg}]]</p>
+                            </th:block>
+                            <!-- Bloque de mensajes de error -->
+                            <th:block th:if="${errorMsg}">
+                                <p class="text-danger fs-6 fw-bold">[[${errorMsg}]]</p>
+                            </th:block>
+
+                        </div>
                         <div class="card-body">
                             <form th:action="@{/admin/saveProduct}" th:object="${producto}" method="post" enctype="multipart/form-data">
                                 <div class="mb-3">
-                                    <label>Digite el Titulo</label>
+                                    <label>Nombre</label>
                                     <input type="text" th:field="*{nombre}" class="form-control" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label>Digite la Descripción</label>
-                                    <textarea rows="3" cols="" th:field="*{descripcion}" class="form-control" required></textarea>
+                                    <label>Descripción</label>
+                                    <textarea rows="3" th:field="*{descripcion}" class="form-control" required></textarea>
                                 </div>
-								<div class="mb-3">
-									<label>Categoria</label> <select class="form-control"
-										th:field="*{categoria}" required>
-										<option value="">---select---</option>
-										<option th:each="cat : ${categorias}" th:value="${cat.nombre}"
-											th:text="${cat.nombre}"></option>
-									</select>
-								</div>
-								<div class="mb-3">
-                                    <label>Digite el Precio</label>
+                                <div class="mb-3">
+                                    <label>Categoría</label>
+                                    <select class="form-control" th:field="*{categoria}" required>
+                                        <option value="">--- Seleccionar ---</option>
+                                        <option th:each="cat : ${categorias}" th:value="${cat.nombre}" th:text="${cat.nombre}"></option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Precio</label>
                                     <input type="text" th:field="*{precio}" class="form-control" required>
                                 </div>
-                                <div class="row">
-                                    <div class="mb-3 col-md-4">
-                                        <label>Stock</label>
-                                        <input type="text" th:field="*{stock}" class="form-control" required>
-                                    </div>
-                                    <div class="mb-3 col-md-8">
-                                        <label>Cargue la Imagen</label>
-                                        <input type="file" name="file" class="form-control" required>
-                                    </div>
+                                <div class="mb-3">
+                                    <label>Stock</label>
+                                    <input type="text" th:field="*{stock}" class="form-control" required>
                                 </div>
-                                <button type="submit" class="btn btn-warning col-md-6 offset-md-3">Cargar</button>
+                                <div class="mb-3">
+                                    <label>Imagen</label>
+                                    <input type="file" name="file" class="form-control">
+                                </div>
+                                <button type="submit" class="btn btn-success col-md-6 offset-md-3 mt-2">Cargar</button>
                             </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lista de productos -->
+                <div class="col-md-8">
+                    <div class="card card-sh">
+                        <div class="card-header text-center fs-4 card-header-custom">Detalles Productos</div>
+                        <div class="card-body">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Descripción</th>
+                                        <th scope="col">Categoría</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col">Stock</th>
+                                        <th scope="col">Imagen</th>
+                                        <th scope="col">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="p : ${productos}">
+                                        <th scope="row">[[${p.id}]]</th>
+                                        <td>[[${p.nombre}]]</td>
+                                        <td>[[${p.descripcion}]]</td>
+                                        <td>[[${p.categoria}]]</td>
+                                        <td>[[${p.precio}]]</td>
+                                        <td>[[${p.stock}]]</td>
+                                        <td><img th:src="@{'/img/product_img/' + ${p.image}}" alt="Imagen del producto" class="img-thumbnail" style="max-width: 50px; max-height: 50px;"></td>
+                                        <td>
+                                            <a th:href="@{'/admin/edit/' + ${p.id}}"><i class="fa-regular fa-pen-to-square text-primary fa-2x"></i></a>
+                                            <a th:href="@{'/admin/delete/' + ${p.id}}"><i class="fa-solid fa-trash text-danger fa-2x"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
